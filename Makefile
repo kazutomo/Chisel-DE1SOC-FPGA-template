@@ -5,6 +5,9 @@ all: Foobar.v
 sof output_files/Simple.sof: Foobar.v
 	quartus_sh --flow compile Simple.qpf
 
+prog: output_files/Simple.sof
+	quartus_pgm -z -m JTAG -o "p;output_files/Simple.sof@2"
+
 Foobar.v: Foobar.scala
 	sbt "test:runMain foobar.TestMain"
 
