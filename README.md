@@ -29,6 +29,9 @@ How to run the bitstream on DE1SOC
 
      $ quartus_pgmw
 
+Note: please follow "3.2 Configuration of Cyclone V SoC FPGA on
+DE1-SOC" in DE1-SoC_User_manual_revf.pdf
+
 Configure and start the USB blaster
 -------------------------
 
@@ -37,11 +40,11 @@ Configure and start the USB blaster
 Add the following lines to the /etc/udev/rules.d/51-usbblaster.rules file:
 
 
-        SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6001", MODE="0666" OWNER="1000"
-        SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6002", MODE="0666" OWNER="1000"
-        SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6003", MODE="0666" OWNER="1000"
-        SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6010", MODE="0666" OWNER="1000"
-        SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6810", MODE="0666" OWNER="1000"
+SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6001", MODE="0666" OWNER="1000"
+SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6002", MODE="0666" OWNER="1000"
+SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6003", MODE="0666" OWNER="1000"
+SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6010", MODE="0666" OWNER="1000"
+SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6810", MODE="0666" OWNER="1000"
 
 
 	$ sudo udevadm control --reload-rules   # reboot may be need
